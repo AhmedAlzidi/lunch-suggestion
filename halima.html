@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اقتراح الغداء</title>
+    <style>
+        body {
+            font-family: 'Tahoma', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            color: #343a40;
+        }
+        header {
+            text-align: center;
+            background-color: #007bff;
+            color: white;
+            padding: 20px 10px;
+            font-size: 28px;
+            font-weight: bold;
+            border-bottom: 3px solid #0056b3;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+        }
+        label {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            box-sizing: border-box;
+            resize: none;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #28a745;
+            display: none;
+        }
+        .thank-you {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #17a2b8;
+            display: none;
+        }
+        .emoji {
+            font-size: 50px;
+            margin: 20px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #6c757d;
+        }
+        .funny-shapes {
+            position: absolute;
+            font-size: 30px;
+            color: #ff6347;
+            top: 10px;
+            left: 20px;
+        }
+        .funny-shapes.right {
+            right: 20px;
+            left: auto;
+            top: auto;
+            bottom: 10px;
+            color: #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        حليمة البلوشي
+    </header>
+    
+    <div class="container">
+        <div class="funny-shapes">&#128523;</div>
+        <div class="funny-shapes right">&#128516;</div>
+        
+        <label for="suggestion">اعطيني اقتراح للغداء اليوم:</label>
+        <textarea id="suggestion" placeholder="اكتب اقتراحك هنا..."></textarea>
+        <button onclick="showMessage()">إرسال الاقتراح</button>
+        
+        <div class="message" id="message">
+            يجب تصوير الشاشة وارسال الاقتراح لي احمد في الواتساب
+        </div>
+        <div class="thank-you" id="thankYouMessage">
+            شكرًا لك على اقتراحك الجميل! لا تنسي تصوير الشاشة وإرسالها لأحمد. &#128578;
+        </div>
+        <div class="emoji" id="emoji">&#127869;</div>
+    </div>
+    
+    <footer>
+        &copy; 2024 تصميم بسيط وجميل
+    </footer>
+
+    <script>
+        function showMessage() {
+            var suggestion = document.getElementById("suggestion").value;
+            var messageDiv = document.getElementById("message");
+            var thankYouDiv = document.getElementById("thankYouMessage");
+            var emojiDiv = document.getElementById("emoji");
+
+            if (suggestion.trim() !== "") {
+                messageDiv.style.display = "block";
+                thankYouDiv.style.display = "block";
+                emojiDiv.innerHTML = "&#129386;"; // Changes emoji to a smiling face
+            } else {
+                alert("الرجاء كتابة اقتراح أولاً!");
+            }
+        }
+    </script>
+</body>
+</html>
